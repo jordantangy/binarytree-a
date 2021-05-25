@@ -84,3 +84,19 @@ TEST_CASE("in order traversal"){
     }
 
 }
+
+TEST_CASE("adding elements to existing and non existing nodes"){
+
+    BinaryTree<string> bt;
+    bt.add_root("4");
+    bt.add_left("4","3");
+    bt.add_right("4","5");
+    bt.add_right("5","7");
+    bt.add_left("7","10");
+
+    CHECK_NOTHROW(bt.add_left("10","15"));
+    CHECK_NOTHROW(bt.add_right("7","8"));
+    CHECK_THROWS(bt.add_left("11","12"));
+    CHECK_THROWS(bt.add_left("12","6"));
+    CHECK_THROWS(bt.add_left("12","6"));
+}

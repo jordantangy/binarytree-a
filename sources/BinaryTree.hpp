@@ -56,25 +56,27 @@ namespace ariel{
     };
         
         public:
-        BinaryTree<T>():root(nullptr){}
+        //Initialize an empty tree
+        BinaryTree<T>(){}
 
         BinaryTree<T>& add_root(const T& val){
             node* r = new node(val);
             root = r;
             return *this;
         }
+        //check whether the node we want to add on the left or the right side has a parent node
         bool exist(const T& elem){
             return true;
         }
         BinaryTree<T>& add_left(const T& current,const T& left_child){
             if(!exist(current)){
-                throw std::invalid_argument("the specified node those not exist");
+                throw std::invalid_argument("the specified node does not exist");
             }
             return *this;
         }
         BinaryTree<T>& add_right(const T& current,const T& right_child){
             if(!exist(current)){
-                throw std::invalid_argument("the specified node those not exist");
+                throw std::invalid_argument("the specified node does not exist");
             }
             return *this;
         }
@@ -116,7 +118,7 @@ namespace ariel{
         } 
 
     };
-    
+    //template operator <<
     template<class T> inline ostream& operator<<(ostream& out, const BinaryTree<T>& val){
         return out;
     }
