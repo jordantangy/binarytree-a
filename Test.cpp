@@ -98,5 +98,5 @@ TEST_CASE("adding elements to existing and non existing nodes"){
     CHECK_NOTHROW(bt.add_right("7","8"));
     CHECK_THROWS(bt.add_left("11","12"));
     CHECK_THROWS(bt.add_left("12","6"));
-    CHECK_THROWS(bt.add_left("12","6"));
+    CHECK_THROWS(bt.add_left("12","3"));
 }
