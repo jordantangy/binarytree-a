@@ -6,15 +6,15 @@ using namespace std;
 namespace ariel{
     template<typename T> class BinaryTree{
 
-        private:
-        struct node{
+
+        typedef struct node{
             T val;
             node* right;
             node* left;
             node(const T& val):val(val),right(nullptr),left(nullptr){}
-        };
-        node* root;
+        }node;
 
+        node* root;
         
         class iterator {
    
